@@ -1,18 +1,28 @@
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/logo.png'
-import MenuIcon from '@material-ui/icons/Menu';
+import './style.css'
 
-function HeaderComponent () {
+const Header = () => {
     return (
-        <header>
-        <div>
-            <img src={logo} alt="Consultempo" />
-        </div>
+        <nav>
+            <div className='div-header' >
+                <div>
+                    <img src={logo} alt="Consultempo" />
+                </div>
 
-        <div>
-            <MenuIcon/>
-        </div>
+                <div >
+                    tempo real
+                </div>
 
-        </header>
+                <div>
+                    Previsao do tempo
+                </div>
+
+                <div >
+                    Previsao do tempo
+                </div>
+            </div>
+        </nav>
     )
-} 
-export default HeaderComponent
+}
+export default Header

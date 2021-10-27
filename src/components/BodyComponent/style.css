@@ -1,16 +1,9 @@
-nav{
-    height: 110px;
-    border: 1px solid #bb2222;  
-}
 
-.div-header{
-    width: 90%;
+.div-background{
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
 }
-
-

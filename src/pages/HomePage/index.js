@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HeaderComponent from '../../components/HeaderComponent'
+import Header from '../../components/HeaderComponent';
+import Body from './../../components/BodyComponent/index';
 
 
-const HomePage = () => {
+const Home = () => {
     return (
-        <HeaderComponent />
+        <><Header /><Body /></>    
     );
 }
 
-export default HomePage;
+export default Home;
