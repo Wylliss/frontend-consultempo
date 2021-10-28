@@ -9,17 +9,10 @@ const Header = () => {
                 <div>
                     <img src={logo} alt="Consultempo" />
                 </div>
-
-                <div >
-                    tempo real
-                </div>
-
-                <div>
-                    Previsao do tempo
-                </div>
-
-                <div >
-                    Previsao do tempo
+                <div className='btns'>
+                    <button type="button" className="botao"> Tempo Real</button>
+                    <button type="button" className="botao"> Previsao do tempo</button>
+                    <button type="button" className="botao"> Historico</button>
                 </div>
             </div>
         </nav>
