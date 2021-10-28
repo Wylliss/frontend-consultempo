@@ -6,7 +6,7 @@ import Body from './../../components/BodyComponent/index';
 
 const Home = () => {
     return (
-        <><Header /><Body /></>    
+        <><Header /><Body /> <div>Aqui esta a Home Page</div></>   
     );
 }
 
