@@ -8,7 +8,7 @@ import Historico from "./pages/HistoricoPage";
 const Routes = () => {
    return(
        <BrowserRouter>
-           <Route component = { Home }  path="/home" exact />
+           <Route component = { Home }  path="/" exact />
            <Route component = { Previsao }  path="/previsao" exact />
            <Route component = { Historico }  path="/historico" exact />
        </BrowserRouter>

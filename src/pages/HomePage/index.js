@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../../components/HeaderComponent';
 import Body from './../../components/BodyComponent/index';
+import MyCard from '../../components/Card';
 
 
 const Home = () => {
     return (
-        <><Header /><Body /> <div>Aqui esta a Home Page</div></>   
+        <>
+        <Header></Header>
+        
+        <Body></Body> 
+        
+        <MyCard></MyCard>
+        
+        </>
     );
 }
 

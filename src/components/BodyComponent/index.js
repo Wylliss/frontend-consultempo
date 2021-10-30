@@ -1,12 +1,17 @@
-import { NavLink } from 'react-router-dom'
 import background from '../../assets/background.png'
 import './style.css'
 
+
+var sectionStyle = {
+    width: "100%",
+    height: "700px",
+    backgroundImage: `url(${background})`
+  };
+
 const Body = () => {
     return (
-        <div>
-            <img className="div-background" src={background} alt="Consultempo" />
-        </div>
-    )
+        <section style={ sectionStyle }>
+        </section>
+      );
 }
 export default Body
