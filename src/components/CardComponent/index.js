@@ -5,11 +5,12 @@ import Typography from "@material-ui/core/Typography";
   
 export default function MyCard() {
   return (
-    <div style={{}}>
-      <Card   className="card"
+    <div className="card" style={{}}>
+      <Card   
         style={{
           width: 300,
           backgroundColor: "#9798ce",
+          position:"absolute"
         }}
       >
         <CardContent>

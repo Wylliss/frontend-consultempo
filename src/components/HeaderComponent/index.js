@@ -12,7 +12,7 @@ const Header = () => {
                         <img src={logo} alt="Consultempo" />
                     </div>
                     <div className='btns'>                   
-                        <Link to="/home" className="botao"> Tempo Real</Link>
+                        <Link to="/" className="botao"> Tempo Real</Link>
                         <Link to="/previsao" className="botao"> Previsao do tempo</Link>
                         <Link to="/historico" className="botao"> Historico</Link>                                                
                     </div>
