@@ -1,5 +1,5 @@
 import './style.css'
-import Chart from './../ChartComponent';
+import Chart from './../ChartForecastComponent';
 const ForecastComponent = () => {
   return (
     <>
@@ -8,7 +8,6 @@ const ForecastComponent = () => {
           Previsao Temperatura
         </div>
         <Chart />
-
       </div>
       <div className="card_container3">
         <div>

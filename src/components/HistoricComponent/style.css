@@ -1,49 +1,19 @@
-.bg_image{
-  background-image: url('../../assets/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 90vw;
-  color: #4c4d99;
-  position: relative;
-  margin: 10px 5vw;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
-.weather_temperature {
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-} 
-.weather_temperature h4 {
-  font-size: 24px;
-} 
-.weather_temperature p {
-  font-size: 54px;
-  font-weight: bold;
-}
-
-.card_container {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-  height: 500px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 30px;
-  margin-right: 100px;
-  border-radius: 10px;
-  padding-top: 50px;
-}
 .card_row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   padding: 17px;
-} .card_row * {
+}
+
+.card_row * {
   color: #fff;
   font-size: 24px;
+}
+
+.rowC {
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
 }
