@@ -1,23 +1,26 @@
 import './style.css'
+import Chart from '../ChartComponent';
 const ForecastComponent = () => {
-  return (
-    <>
-      <div className="weather_temperature">
-        <h4>Temperatura</h4>
-        <p>24°C</p>
-      </div>
-      <div className="card_container">
-        <div className="card_row">
-          <div className="card_col">
-            Qualidade do Ar - Historico
+    return (
+      <>
+        
+          <div className="card_container">
+            Qualidade do Ar
+            <Chart />
           </div>
-          <div className="card_col">
-            76
+          <div className="card_container">
+            Umidade do ar
+            <Chart />
           </div>
-        </div>
-      </div>
-    </>
-  );
-}
+          <div className="card_container">
+            Umidade do solo
+            <Chart />
+          </div>
+  
+       
+
+      </>
+    );
+  }
 
 export default ForecastComponent
