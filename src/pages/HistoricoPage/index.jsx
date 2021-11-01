@@ -7,7 +7,7 @@ const Historico = () => {
     return (
         <>
             <Header page="historico" />
-            <Body /> 
+            <Body page="historico" /> 
             <div>Aqui esta o Historico</div>
         </>          
 

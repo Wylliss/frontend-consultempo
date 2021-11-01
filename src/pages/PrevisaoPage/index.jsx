@@ -7,7 +7,7 @@ const Previsao = () => {
     return (
         <>
             <Header page="previsao" />
-            <Body /> 
+            <Body page="previsao" /> 
             <div>Aqui esta a Previsao</div>
         </>          
 
