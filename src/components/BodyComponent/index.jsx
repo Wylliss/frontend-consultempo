@@ -1,5 +1,7 @@
 import './style.css'
 import RealTimeComponent from '../RealTimeComponent';
+import ForecastComponent from '../ForecastComponent';
+import HistoricComponent from '../HistoricComponent'
 const Body = ({ page }) => {
 
   if (page === "home") {
@@ -12,18 +14,16 @@ const Body = ({ page }) => {
 
   if (page === "previsao") {
     return (
-      <div class="bg_image">
-        <p>previsao</p>
-        <RealTimeComponent />
+      <div class="bg_image">        
+        <ForecastComponent />
       </div>
     );
   }
 
   if (page === "historico") {
     return (
-      <div class="bg_image">
-        <p>historico</p>
-        <RealTimeComponent />
+      <div class="bg_image">     
+        <HistoricComponent />
       </div>
     );
   }

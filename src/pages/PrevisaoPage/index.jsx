@@ -8,7 +8,6 @@ const Previsao = () => {
         <>
             <Header page="previsao" />
             <Body page="previsao" /> 
-            <div>Aqui esta a Previsao</div>
         </>          
 
     );

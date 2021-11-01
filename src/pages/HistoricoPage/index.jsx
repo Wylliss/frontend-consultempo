@@ -8,7 +8,6 @@ const Historico = () => {
         <>
             <Header page="historico" />
             <Body page="historico" /> 
-            <div>Aqui esta o Historico</div>
         </>          
 
     );
