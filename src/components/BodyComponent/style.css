@@ -1,6 +1,21 @@
 .bg_image{
-    background-image: url('../../assets/background.png');
-    background-size: cover;
-    height: 100vh;
-    color: #4c4d99;
-  }
+  background-image: url('../../assets/background.png');
+  background-size: cover;
+  height: 100vh;
+  color: #4c4d99;
+  position: relative;
+}
+
+.weather_temperature {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+} 
+.weather_temperature h4 {
+  font-size: 24px;
+} 
+.weather_temperature p {
+  font-size: 54px;
+  font-weight: bold;
+}
