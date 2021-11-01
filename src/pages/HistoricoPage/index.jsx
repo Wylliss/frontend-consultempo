@@ -5,8 +5,11 @@ import Body from '../../components/BodyComponent/index';
 
 const Historico = () => {
     return (
-        <><Header /><Body /> 
-        <div>Aqui esta o Historico</div></>          
+        <>
+            <Header page="historico" />
+            <Body /> 
+            <div>Aqui esta o Historico</div>
+        </>          
 
     );
 }

@@ -1,26 +1,30 @@
 import logo from '../../assets/logo.png'
 import './style.css'
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({page}) => {
 
     return (
-        <Router>
-            <nav>
-                <div className='div-header' >
-                    <div>
-                        <img src={logo} alt="Consultempo" />
-                    </div>
-                    <div className='btns'>                   
-                        <Link to="/" className="botao"> Tempo Real</Link>
-                        <Link to="/previsao" className="botao"> Previsao do tempo</Link>
-                        <Link to="/historico" className="botao"> Historico</Link>                                                
-                    </div>
+        <nav>
+            <div className='div-header' >
+                <div>
+                    <img src={logo} alt="Consultempo" />
                 </div>
-            </nav>
-            
-        </Router>
-        
+                <div className='btns'>                   
+                    <Link to="/" className={page == "home" ? "selected" : ""}> 
+                        Tempo Real
+                    </Link>
+
+                    <Link to="/previsao" className={page == "previsao" ? "selected" : ""}> 
+                        Previsao do tempo
+                    </Link>
+
+                    <Link to="/historico" className={page == "historico" ? "selected" : ""}> 
+                        Historico
+                    </Link>                                                
+                </div>
+            </div>
+        </nav>
     )
 }
 export default Header

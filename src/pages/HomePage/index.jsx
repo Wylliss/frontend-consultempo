@@ -7,12 +7,8 @@ import MyCard from '../../components/CardComponent';
 const Home = () => {
     return (
         <>
-        <Header></Header>
-        
-        <Body></Body> 
-        
-        <MyCard></MyCard>
-        
+            <Header page="home" />
+            <Body /> 
         </>
     );
 }

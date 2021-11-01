@@ -6,11 +6,14 @@ import Typography from "@material-ui/core/Typography";
 export default function MyCard() {
   return (
     <div className="card" style={{}}>
-      <Card   
+        <div className="card">
+          <p>teste</p>
+        </div>
+
+      {/* <Card   
         style={{
           width: 300,
-          backgroundColor: "#9798ce",
-          position:"absolute"
+          backgroundColor: "#9798ce"
         }}
       >
         <CardContent>
@@ -31,7 +34,7 @@ export default function MyCard() {
             24 graus C
           </Typography>
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   );
 }

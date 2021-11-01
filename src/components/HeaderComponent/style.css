@@ -1,6 +1,5 @@
 nav{
     height: 110px;
-    border: 1px solid #bb2222;  
 }
 
 .div-header{
@@ -15,11 +14,11 @@ nav{
 .btns {
     text-align: center;
     margin-top: 20px;
-}
 
-.botao {
-    border: none;;
-    color: #ffffff;
+} .btns a {
+    text-decoration: none;
+    color: #000; 
+    border: none;
     padding: 20px;
     margin: 10px;
     font-size: 24px;
@@ -28,15 +27,14 @@ nav{
     position: relative;
     box-sizing: border-box;
     cursor: pointer;   
+    transition: 0.4s;
+} .btns a:hover {
+    background-color: #050A30;
+    color: #fff;
+    transition: 0.4s;
 }
 
-.botao{
-    background: #2c2a80;
+.selected {
+    background-color: #050A30;
+    color: #fff !important;
 }
-.botao:active{
-    background: rgba(0,0,0,0);
-    color:rgb(71, 122, 82);
-    box-shadow: inset 0 0 0 3px #bb2222;
-}
-
-

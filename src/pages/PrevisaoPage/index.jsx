@@ -5,8 +5,11 @@ import Body from '../../components/BodyComponent/index';
 
 const Previsao = () => {
     return (
-        <><Header /><Body /> 
-        <div>Aqui esta a Previsao</div></>          
+        <>
+            <Header page="previsao" />
+            <Body /> 
+            <div>Aqui esta a Previsao</div>
+        </>          
 
     );
 }
