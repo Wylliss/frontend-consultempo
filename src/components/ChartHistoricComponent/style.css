@@ -1,0 +1,43 @@
+.card_container2 { 
+
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 300px;
+    margin-right: 1000px;
+    border-radius: 10px;
+    padding-top: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    margin: 20px 5vw;
+    border-radius: 10px;
+    position: relative;
+  }
+  .card_container3 { 
+    background-color: rgba(1, 31, 97, 0.2);
+    margin: 30px;
+    margin-right: 100px;
+    margin-left: 50;
+    border-radius: 10px;
+    padding-top: 50px;
+    width: 30vw;
+    margin: 20px 1vw;
+    border-radius: 10px;
+    
+    
+  
+  }
+  
+  .card_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 170px;
+  }
+  
+  .card_row * {
+    color: #fff;
+    font-size: 240px;
+  }
+  
+  

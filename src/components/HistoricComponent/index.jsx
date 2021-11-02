@@ -11,29 +11,25 @@ const HistoricComponent = () => {
   return (
     <>
       <div className='rowC'>
-        <div className="card_container" >
+        <div>
           <ChartHeight />
         </div>
-
-        <div className="card_container">
+        <div >
           <ChartMoistureAir />
         </div>
-
-        <div className="card_container">
+        <div>
           <ChartMoistureGround />
         </div>
-
-        <div className="card_container">
+        <div >
           <ChartPressure />
         </div>
-
-        <div className="card_container">
+        <div >
           <ChartQualityAir />
         </div>
-        <div className="card_container">
+        <div >
           < ChartRainfall />
         </div>
-        <div className="card_container">
+        <div >
           <ChartWind />
         </div>
       </div>

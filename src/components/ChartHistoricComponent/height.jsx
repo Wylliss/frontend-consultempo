@@ -24,7 +24,7 @@ class ChartHeight extends Component {
 
     render() {
         return (
-            <div className="chart">
+            <div className="card_container3">
                 <Line
                     data={this.state.data}
                     options={{
@@ -33,7 +33,7 @@ class ChartHeight extends Component {
                             legend: {
                                 labels: {                                  
                                     font: {
-                                        size: 30,
+                                        size: 20,
                                         family: 'Helvetica',
                                     }
                                 }
