@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2'
-
+import './style.css'
 class ChartQualityAir extends Component {
 
     constructor(props) {
@@ -25,7 +25,7 @@ class ChartQualityAir extends Component {
 
     render() {
         return (
-            <div className="card_container3">
+            <div className="charthist">
                 <Line
                     data={this.state.data}
                     options={{
