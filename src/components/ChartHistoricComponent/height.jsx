@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2'
-
+import './style.css'
+import api
+ from '../../services/api';
 class ChartHeight extends Component {
+
+    state = {
+        posts: []
+      }
+    
+      componentDidMount() {
+        api.get('/weather/historic')
+          .then(res => {
+            const posts = res.data;     
+            console.log(posts);
+         
+    
+            this.setState({ posts });
+          })
+      }
+    
 
     constructor(props) {
         super(props);
@@ -24,7 +42,7 @@ class ChartHeight extends Component {
 
     render() {
         return (
-            <div className="card_container3">
+            <div className="charthist">
                 <Line
                     data={this.state.data}
                     options={{

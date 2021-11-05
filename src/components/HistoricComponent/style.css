@@ -13,10 +13,13 @@
 }
 
 .rowC {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
-  overflow-y: scroll;
-  justify-content: space-between;
+  overflow-y: scroll;  
   width: 100%;
-  padding: 17px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  border-radius: 10px; 
+  position: relative;
 }

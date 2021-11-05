@@ -12,6 +12,14 @@
   justify-content: space-between;
 }
 
+.bg_01{
+  background-image: url('../../assets/background.png')!important;
+}
+
+.bg_02{
+  background-image: url('../../assets/background2.png')!important;
+}
+
 .weather_temperature {
   color: #FFFFFF;
   display: flex;

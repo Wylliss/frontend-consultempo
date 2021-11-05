@@ -1,4 +1,4 @@
-.bg_image{
+.bg_image {
   background-image: url('../../assets/background.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,10 +17,12 @@
   display: flex;
   flex-direction: column;
   padding: 30px;
-} 
+}
+
 .weather_temperature h4 {
   font-size: 24px;
-} 
+}
+
 .weather_temperature p {
   font-size: 54px;
   font-weight: bold;
@@ -37,13 +39,16 @@
   border-radius: 10px;
   padding-top: 50px;
 }
+
 .card_row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   padding: 17px;
-} .card_row * {
+}
+
+.card_row * {
   color: #fff;
   font-size: 24px;
 }

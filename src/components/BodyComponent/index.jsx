@@ -6,7 +6,7 @@ const Body = ({ page }) => {
 
   if (page === "home") {
     return (
-      <div class="bg_image">
+      <div class="bg_image bg_01">
         <RealTimeComponent />
       </div>
     );
@@ -14,7 +14,7 @@ const Body = ({ page }) => {
 
   if (page === "previsao") {
     return (
-      <div class="bg_image">        
+      <div class="bg_image bg_02">        
         <ForecastComponent />
       </div>
     );

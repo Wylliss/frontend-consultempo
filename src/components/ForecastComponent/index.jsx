@@ -3,16 +3,16 @@ import Chart from './../ChartForecastComponent';
 const ForecastComponent = () => {
   return (
     <>
-      <div className="card_container2">
-        <div className="card_row">
-          Previsao Temperatura
-        </div>
+      <div className="card_container2 card_row">
         <Chart />
-      </div>
-      <div className="card_container3">
-        <div>
-          <div className="card_row"> Segunda</div>
-          <div className="card_col"> Tempestade</div>
+        <div >
+          <p> Segunda - vai cair o mundo </p>
+          <p> Terça - vai cair o mundo </p>
+          <p> Quarta - vai cair o mundo </p>
+          <p> Quinta - vai cair o mundo </p>
+          <p> Sexta - vai cair o mundo </p>
+          <p> Sabado - vai cair o mundo </p>
+          <p> Domingo - vai cair o mundo </p>          
         </div>
       </div>
     </>
