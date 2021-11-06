@@ -1,22 +1,43 @@
 import './style.css'
 import Chart from './../ChartForecastComponent';
-const ForecastComponent = () => {
-  return (
-    <>
-      <div className="card_container2 card_row">
-        <Chart />
-        <div >
-          <p> Segunda - vai cair o mundo </p>
-          <p> Terça - vai cair o mundo </p>
-          <p> Quarta - vai cair o mundo </p>
-          <p> Quinta - vai cair o mundo </p>
-          <p> Sexta - vai cair o mundo </p>
-          <p> Sabado - vai cair o mundo </p>
-          <p> Domingo - vai cair o mundo </p>          
-        </div>
-      </div>
-    </>
-  );
-}
+import api from '../../services/api';
+import React from 'react'
+import moment from 'moment';
+export default class ForecastComponent extends React.Component {
 
-export default ForecastComponent
+  state = {
+    forecast: [],
+
+  }
+
+  componentDidMount() {
+    api.get('/forecast')
+      .then(res => {
+        console.log(res.data)
+        this.setState({ forecast: res.data });
+      })
+  }
+
+  render() {
+
+    const { forecast } = this.state;
+    moment.locale('pt-br');
+
+    return (
+      <>
+        <div className="card_container2 card_row">
+          <Chart />
+          <div >            
+            {forecast.map(tempo => (
+              <div>
+                <h2>{moment(tempo.date).format('LL')}</h2>               
+                <h2>{tempo.description}</h2>
+                <br></br>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  }
+}

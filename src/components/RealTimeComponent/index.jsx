@@ -8,7 +8,7 @@ export default class RealTimeComponent extends React.Component {
     realtime: [],
 
   }
-
+  
   componentDidMount() {
     api.get('/weather/last')
       .then(res => {
@@ -25,7 +25,7 @@ export default class RealTimeComponent extends React.Component {
       <>
         <div className="weather_temperature">
           <h4>Temperatura</h4>
-          <p>24°C</p>
+          <h4>{realtime.temperature} °C</h4>
         </div>
         <div className="card_container">
           <div className="card_row">
