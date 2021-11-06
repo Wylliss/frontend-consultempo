@@ -1,7 +1,9 @@
 .charthist {
   background-color: rgb(234, 234, 241);
-  width: 70%;  
-  color: blue;
+  width: 100%;  
+  color: rgb(255, 72, 0);
   padding: 10px;
   border-radius: 8px;
+  margin-left: 3mm;
+  
 }

@@ -5,23 +5,22 @@ import React from 'react'
 export default class RealTimeComponent extends React.Component {
 
   state = {
-    posts: [],
-    posts2: []
+    realtime: [],
+
   }
 
   componentDidMount() {
-    api.get('/weather/historic')
+    api.get('/weather/last')
       .then(res => {
-        const posts = res.data; //array completo
-        const posts2 = res.data[res.data.length - 1] //apenas um objeto do array
-        console.log(posts);
-        console.log(posts2)
-
-        this.setState({ posts , posts2 });
+        console.log(res.data)
+        this.setState({ realtime: res.data });
       })
   }
 
   render() {
+
+    const { realtime } = this.state;
+
     return (
       <>
         <div className="weather_temperature">
@@ -34,7 +33,7 @@ export default class RealTimeComponent extends React.Component {
               Qualidade do Ar
             </div>
             <div className="card_col">
-              {this.state.posts2.map(post => <li>{post.airQuality}</li>)}
+              {realtime.airQuality}
             </div>
           </div>
           <div className="card_row">
@@ -42,7 +41,7 @@ export default class RealTimeComponent extends React.Component {
               Umidade do Ar
             </div>
             <div className="card_col">
-              61.5 %
+              {realtime.airHumidity}
             </div>
           </div>
           <div className="card_row">
@@ -50,7 +49,7 @@ export default class RealTimeComponent extends React.Component {
               Umidade do Solo
             </div>
             <div className="card_col">
-              774 %
+              {realtime.groundHumidity}
             </div>
           </div>
           <div className="card_row">
@@ -58,7 +57,7 @@ export default class RealTimeComponent extends React.Component {
               Altura
             </div>
             <div className="card_col">
-              1 m
+              {realtime.height}
             </div>
           </div>
           <div className="card_row">
@@ -66,7 +65,7 @@ export default class RealTimeComponent extends React.Component {
               Pluviosidade
             </div>
             <div className="card_col">
-              0 mm³
+              {realtime.pluviosity}
             </div>
           </div>
           <div className="card_row">
@@ -74,7 +73,7 @@ export default class RealTimeComponent extends React.Component {
               Pressão
             </div>
             <div className="card_col">
-              926 PA
+              {realtime.pressure}
             </div>
           </div>
           <div className="card_row">
@@ -82,7 +81,7 @@ export default class RealTimeComponent extends React.Component {
               Vento
             </div>
             <div className="card_col">
-              20 km/h
+              {realtime.wind}
             </div>
           </div>
         </div>

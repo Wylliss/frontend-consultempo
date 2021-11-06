@@ -10,16 +10,17 @@
 .card_row * {
   color: #fff;
   font-size: 24px;
+  
 }
 
 .rowC {
-  display: inline-flex;
+  display: inline-flex;  
   flex-direction: row;
   overflow-y: scroll;  
   width: 100%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 30px;
+  padding: 20px;  
+  margin: 60px;
   border-radius: 10px; 
-  position: relative;
+  position: relative; 
+
 }
