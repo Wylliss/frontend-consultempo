@@ -13,8 +13,7 @@ class ChartHeight extends Component {
         api.get('/weather/historic')
           .then(res => {
             const posts = res.data;     
-            console.log(posts);
-         
+            console.log(posts);        
     
             this.setState({ posts });
           })

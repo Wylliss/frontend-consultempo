@@ -1,62 +1,73 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2'
+import { Line, Pie } from 'react-chartjs-2'
 import './style.css'
+import api from '../../services/api';
+import moment from 'moment';
+import { Chart } from 'react-chartjs-2';
+import { blue } from '@material-ui/core/colors';
 
-class ChartForecastComponent extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-            data: {
-                datasets: [{
-                    label: 'Minima',
-                    data: [20, 22, 30, 16, 16, 19, 18],
-                    borderColor: 'blue',
-                    backgroundColor: '#6AAFD1',
-                    type: 'line',
+class ChartForecastComponent extends React.Component {
 
 
-                }, {
-                    label: 'Maxima',
-                    data: [30, 35, 40, 25, 23, 26, 29],
-                    borderColor: 'red',
-                    backgroundColor: 'orange',
-                    type: 'line'
 
-                }],
+    state = {
+        forecast: [],
 
-                labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
-            },
-        }
     }
+
+    componentDidMount() {
+        api.get('/forecast')
+            .then(res => {
+                console.log(res.data)
+                this.setState({ forecast: res.data });
+                const data = {
+                    labels: res.data.date,
+                    datasets: [{
+                        label: "Maxima",
+                        data: res.data.maximum,
+                        backgroundColor: blue,
+                        borderWidth: 1
+                    },
+                    {
+                        label: "Minima",
+                        data: res.data.minimum,
+                        backgroundColor: blue,
+                        borderWidth: 1
+                    }]
+                };
+        
+                const config = {
+                    type: 'bar',
+                    data,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+        
+                const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    config
+        
+                );
+                myChart.destroy();
+            })
+    }
+
 
 
     render() {
+       
+
         return (
-            <div className="chart">
-                <Line
-                    data={this.state.data}
-                    options={{
-                        maintainAspectRatio: true,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    // This more specific font property overrides the global property
-                                    font: {
-                                        size: 30,
-                                        family: 'Helvetica',
-
-                                    }
-                                }
-                            },
-
-                        }
-                    }}
-                />
-            </div>
+            <div className="chart" >
+                <myChart />
+            </div >
         )
     }
 }
+
 export default ChartForecastComponent
