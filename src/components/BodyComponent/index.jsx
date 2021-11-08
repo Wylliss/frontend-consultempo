@@ -29,8 +29,7 @@ const Body = ({ page }) => {
   }
 
   return (
-    <div class="bg_image">
-      <div>DEU RUIM MANO</div>
+    <div class="bg_image">      
     </div>
   );
 }

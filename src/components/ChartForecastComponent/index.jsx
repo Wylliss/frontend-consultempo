@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import api from '../../services/api';
-import moment from 'moment';
 
 
 export default class ChartForecast extends PureComponent {
@@ -24,9 +23,8 @@ export default class ChartForecast extends PureComponent {
     render() {
 
         const { forecast } = this.state;
-        
-        const dia = moment(forecast.date).format('LL');
-        
+       
+       
         return (
             <ResponsiveContainer width="70%" height="100%">
                 <LineChart

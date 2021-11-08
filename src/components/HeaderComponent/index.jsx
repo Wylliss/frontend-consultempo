@@ -11,15 +11,15 @@ const Header = ({page}) => {
                     <img src={logo} alt="Consultempo" />
                 </div>
                 <div className='btns'>                   
-                    <Link to="/" className={page == "home" ? "selected" : ""}> 
+                    <Link to="/" className={page === "home" ? "selected" : ""}> 
                         Tempo Real
                     </Link>
 
-                    <Link to="/previsao" className={page == "previsao" ? "selected" : ""}> 
+                    <Link to="/previsao" className={page === "previsao" ? "selected" : ""}> 
                         Previsao do tempo
                     </Link>
 
-                    <Link to="/historico" className={page == "historico" ? "selected" : ""}> 
+                    <Link to="/historico" className={page === "historico" ? "selected" : ""}> 
                         Historico
                     </Link>                                                
                 </div>

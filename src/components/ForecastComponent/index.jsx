@@ -1,5 +1,4 @@
 import './style.css'
-import Chart from './../ChartForecastComponent';
 import api from '../../services/api';
 import React from 'react'
 import moment from 'moment';
