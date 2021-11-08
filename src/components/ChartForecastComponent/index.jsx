@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, ResponsiveContainer } from 'recharts';
 import api from '../../services/api';
-
+import moment from 'moment';
+import 'moment/min/moment-with-locales'
 
 export default class ChartForecast extends PureComponent {
     static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
@@ -23,10 +24,15 @@ export default class ChartForecast extends PureComponent {
     render() {
 
         const { forecast } = this.state;
-       
-       
+
+        function formatXAxis(tickItem) {
+            return moment(tickItem).format('l')
+            
+        }
+
+
         return (
-            <ResponsiveContainer width="70%" height="100%">
+            <ResponsiveContainer width="70%" height="100%"  >
                 <LineChart
                     width={500}
                     height={300}
@@ -39,12 +45,24 @@ export default class ChartForecast extends PureComponent {
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis />
+                    <XAxis dataKey="date" tickFormatter={formatXAxis} >
+                        <Label
+                            position="bottom"
+                            style={{ textAnchor: "middle" }}
+                        />
+                    </XAxis>
+                    <YAxis>
+                        <Label
+                            value={"Temperatura ºC"}
+                            position="left"
+                            angle={-90}
+                            style={{ textAnchor: "middle" }}
+                        />
+                    </YAxis>
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="maximum" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="minimum" stroke="#82ca9d" />
+                    <Line name="Máxima" dataKey="maximum" stroke="#b03407" />
+                    <Line name="Mínima" dataKey="minimum" stroke="#07b06d" />
                 </LineChart>
             </ResponsiveContainer>
         );
