@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import { Line, Pie } from 'react-chartjs-2'
-import './style.css'
+import React, { PureComponent } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import api from '../../services/api';
 import moment from 'moment';
-import { Chart } from 'react-chartjs-2';
-import { blue } from '@material-ui/core/colors';
-
-class ChartForecastComponent extends React.Component {
 
 
+export default class ChartForecast extends PureComponent {
+    static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
 
     state = {
         forecast: [],
@@ -20,54 +17,38 @@ class ChartForecastComponent extends React.Component {
             .then(res => {
                 console.log(res.data)
                 this.setState({ forecast: res.data });
-                const data = {
-                    labels: res.data.date,
-                    datasets: [{
-                        label: "Maxima",
-                        data: res.data.maximum,
-                        backgroundColor: blue,
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Minima",
-                        data: res.data.minimum,
-                        backgroundColor: blue,
-                        borderWidth: 1
-                    }]
-                };
-        
-                const config = {
-                    type: 'bar',
-                    data,
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                }
-        
-                const myChart = new Chart(
-                    document.getElementById('myChart'),
-                    config
-        
-                );
-                myChart.destroy();
             })
     }
 
 
-
     render() {
-       
 
+        const { forecast } = this.state;
+        
+        const dia = moment(forecast.date).format('LL');
+        
         return (
-            <div className="chart" >
-                <myChart />
-            </div >
-        )
+            <ResponsiveContainer width="70%" height="100%">
+                <LineChart
+                    width={500}
+                    height={300}
+                    data={forecast}
+                    margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="maximum" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey="minimum" stroke="#82ca9d" />
+                </LineChart>
+            </ResponsiveContainer>
+        );
     }
 }
-
-export default ChartForecastComponent

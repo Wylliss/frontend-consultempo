@@ -1,65 +1,50 @@
-import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2'
-import './style.css'
-import api
- from '../../services/api';
-class ChartHeight extends Component {
+import React, { PureComponent } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import api from '../../services/api';
+
+
+export default class height extends PureComponent {
+    static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
 
     state = {
-        posts: []
-      }
-    
-      componentDidMount() {
+        historic: [],
+
+    }
+
+    componentDidMount() {
         api.get('/weather/historic')
-          .then(res => {
-            const posts = res.data;     
-            console.log(posts);        
-    
-            this.setState({ posts });
-          })
-      }
-    
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-            data: {
-                datasets: [{
-                    label: 'Altura',
-                    data: [20, 22, 30, 16, 16, 19, 18],
-                    borderColor: 'blue',
-                    backgroundColor: '#6AAFD1',
-                    type: 'line',
-                }],
-                labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
-            },
-        }
+            .then(res => {
+                console.log(res.data)
+                this.setState({ historic: res.data });
+            })
     }
 
 
     render() {
+
+        const { historic } = this.state;
+         n       
         return (
-            <div className="charthist">
-                <Line
-                    data={this.state.data}
-                    options={{
-                        maintainAspectRatio: true,
-                        plugins: {
-                            legend: {
-                                labels: {                                  
-                                    font: {
-                                        size: 20,
-                                        family: 'Helvetica',
-                                    }
-                                }
-                            },
-                        }
+            <ResponsiveContainer width="70%" height="100%">
+                <LineChart
+                    width={500}
+                    height={300}
+                    data={historic}
+                    margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
                     }}
-                />
-            </div>
-        )
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="height" stroke="#8884d8" activeDot={{ r: 8 }} />                    
+                </LineChart>
+            </ResponsiveContainer>
+        );
     }
 }
-export default ChartHeight

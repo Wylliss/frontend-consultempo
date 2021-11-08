@@ -3,6 +3,7 @@ import Chart from './../ChartForecastComponent';
 import api from '../../services/api';
 import React from 'react'
 import moment from 'moment';
+import ChartForecast from './../ChartForecastComponent';
 
 export default class ForecastComponent extends React.Component {
 
@@ -27,7 +28,7 @@ export default class ForecastComponent extends React.Component {
     return (
       <>
         <div className="card_container2 card_row">
-          <Chart />
+          <ChartForecast />
           <div >            
             {forecast.map(tempo => (
               <div>
