@@ -22,8 +22,7 @@ export default class height extends PureComponent {
 
     render() {
 
-        const { historic } = this.state;
-         n       
+        const { historic } = this.state;             
         return (
             <ResponsiveContainer width="70%" height="100%">
                 <LineChart
