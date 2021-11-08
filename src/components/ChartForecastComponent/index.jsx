@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, ResponsiveContainer } from 'recharts';
 import api from '../../services/api';
 import moment from 'moment';
-import 'moment/min/moment-with-locales'
+import 'moment/locale/pt-br'
 
 export default class ChartForecast extends PureComponent {
     static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
@@ -26,8 +26,9 @@ export default class ChartForecast extends PureComponent {
         const { forecast } = this.state;
 
         function formatXAxis(tickItem) {
-            return moment(tickItem).format('l')
-            
+            moment.locale('pt-br')
+            return moment(tickItem).format('dddd')  
+
         }
 
 

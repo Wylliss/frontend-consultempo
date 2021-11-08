@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
 import api from '../../services/api';
 import moment from 'moment';
-
+import 'moment/locale/pt-br'
 export default class height extends PureComponent {
 
     state = {
@@ -25,6 +25,7 @@ export default class height extends PureComponent {
         const { historic } = this.state;
 
         function formatXAxis(tickItem) {
+            moment.locale('pt-br')
             return moment(tickItem).format('l')
         }
 
