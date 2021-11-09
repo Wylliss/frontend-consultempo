@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label } from 'recharts';
 import api from '../../services/api';
 import moment from 'moment';
-import 'moment/locale/pt-br'
+import 'moment/locale/pt-br';
+import './style.css'
+
 export default class height extends PureComponent {
 
     state = {
@@ -20,7 +22,7 @@ export default class height extends PureComponent {
 
 
 
-    render(b) {
+    render() {
 
         const { historic } = this.state;
 
@@ -32,201 +34,7 @@ export default class height extends PureComponent {
         return (
             <>
                 <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Percentual"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="airHumidity" name="Umidade do ar" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Indice qualidade do ar"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="airQuality" name="Qualidade do ar" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Indice umidade do solo"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="groundHumidity" name="umidade do solo" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Altura em relação ao nivel do mar"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="height" name="Altura(m)" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Indice de pluviosidade"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="pluviosity" name="#Pluviosidade" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={historic}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
-                            <Label
-                                position="bottom"
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </XAxis>
-                        <YAxis>
-                            <Label
-                                value={"Indice pressão atmosferica"}
-                                position="left"
-                                angle={-90}
-                                style={{ textAnchor: "middle" }}
-                            />
-                        </YAxis>
-                        <Tooltip />
-                        <Legend />
-                        <Line dataKey="pressure" name="Pressão atmosferica" />
-                    </LineChart>
-                </div>
-                <div>
-                    <LineChart
+                    <LineChart className="chart"
                         width={500}
                         height={300}
                         data={historic}
@@ -270,8 +78,203 @@ export default class height extends PureComponent {
                             strokeWidth="4px" />
                     </LineChart>
                 </div>
+                <div >
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Percentual"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="airHumidity" name="Umidade do ar" unit={"%"} />
+                    </LineChart>
+                </div>
                 <div>
-                    <LineChart
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Indice qualidade do ar"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="airQuality" name="Qualidade do ar"/>
+                    </LineChart>
+                </div>
+                <div>
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Indice umidade do solo"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="groundHumidity" name="umidade do solo" />
+                    </LineChart>
+                </div>
+                <div>
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Altura em relação ao nivel do mar"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="height" name="Altura"  unit={"metro(s)"}/>
+                    </LineChart>
+                </div>
+                <div>
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Indice de pluviosidade"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="pluviosity" name="Pluviosidade" />
+                    </LineChart>
+                </div>
+                <div>
+                    <LineChart className="chart"
+                        width={500}
+                        height={300}
+                        data={historic}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="dateTime" tickFormatter={formatXAxis}>
+                            <Label
+                                position="bottom"
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </XAxis>
+                        <YAxis>
+                            <Label
+                                value={"Indice pressão atmosferica"}
+                                position="left"
+                                angle={-90}
+                                style={{ textAnchor: "middle" }}
+                            />
+                        </YAxis>
+                        <Tooltip />
+                        <Legend />
+                        <Line dataKey="pressure" name="Pressão atmosferica" unit={"Pa"} />
+                    </LineChart>
+                </div>
+
+                <div>
+                    <LineChart className="chart"
                         width={500}
                         height={300}
                         data={historic}
@@ -299,7 +302,7 @@ export default class height extends PureComponent {
                         </YAxis>
                         <Tooltip />
                         <Legend />
-                        <Line dataKey="wind" name="Vento" />
+                        <Line dataKey="wind" name="Vento" unit={"Km/h)"} />
                     </LineChart>
                 </div>
             </>

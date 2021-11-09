@@ -1,6 +1,7 @@
 import './style.css'
 import api from '../../services/api'
 import React from 'react'
+import ComponentClock from '../ClockComponent'
 
 export default class RealTimeComponent extends React.Component {
 
@@ -41,6 +42,7 @@ export default class RealTimeComponent extends React.Component {
             <h4>{realtime.temperature} °C</h4>
           </div>
           <div className="card_container">
+          <ComponentClock />
             <div className="card_row">
               <div className="card_col">
                 Qualidade do Ar
