@@ -8,3 +8,13 @@
     margin-left: 3mm;
     margin-top: 3mm;
 }
+
+.chart2 {
+    background-color: rgb(234, 234, 241);
+    width: 100%;
+    color: blue;
+    padding: 0px;
+    border-radius: 8px;
+    position: relative; 
+    margin-left: 3mm;
+}

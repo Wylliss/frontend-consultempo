@@ -32,15 +32,15 @@ export default class ChartForecast extends PureComponent {
 
 
         return (
-            
-                <LineChart className="chart"
-                    width={1100}
-                    height={600}
+            <ResponsiveContainer width="70%" height="100%"  >
+                <LineChart className="chart2"
+                    width={500}
+                    height={300}
                     data={forecast}
                     margin={{
                         top: 5,
                         right: 50,
-                        left: 50,
+                        left: 20,
                         bottom: 5,
                     }}
                 >
@@ -63,7 +63,7 @@ export default class ChartForecast extends PureComponent {
                     <Line dataKey="maximum" name="Máxima" stroke="#b03407" type="monotone" activeDot={{ r: 8 }} />
                     <Line dataKey="minimum" name="Mínima" stroke="#07b06d" type="monotone" activeDot={{ r: 8 }} />
                 </LineChart>
-            
+            </ResponsiveContainer>
         );
     }
 }
