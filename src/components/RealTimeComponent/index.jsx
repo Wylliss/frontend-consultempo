@@ -64,7 +64,7 @@ export default class RealTimeComponent extends React.Component {
                 Umidade do Solo
               </div>
               <div className="card_col">
-                {realtime.groundHumidity} %
+                {realtime.groundHumidity}
               </div>
             </div>
             <div className="card_row">

@@ -15,8 +15,7 @@
 
 .rowC {
   display: inline-flex;  
-  flex-direction: row;
-  overflow-y: scroll;  
+  flex-direction: row; 
   width: 100%;
   padding: 20px;  
   margin: 60px;
