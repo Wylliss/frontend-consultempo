@@ -5,7 +5,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import './style.css'
 
-export default class height extends PureComponent {
+export default class historicCharts extends PureComponent {
 
     state = {
         historic: [],
@@ -19,7 +19,6 @@ export default class height extends PureComponent {
                 this.setState({ historic: res.data });
             })
     }
-
 
 
     render() {
@@ -168,7 +167,7 @@ export default class height extends PureComponent {
                             </XAxis>
                             <YAxis>
                                 <Label
-                                    value={"Indice umidade do solo"}
+                                    value={"Altura em relação ao nivel do mar"}
                                     position="left"
                                     angle={-90}
                                     style={{ textAnchor: "middle" }}
@@ -176,7 +175,7 @@ export default class height extends PureComponent {
                             </YAxis>
                             <Tooltip />
                             <Legend />
-                            <Line dataKey="groundHumidity" name="umidade do solo" />
+                            <Line dataKey="groundHumidity" name="altitute"  unit={"metro(s)"}/>
                         </LineChart>
                     </div>
                     <div>
@@ -200,7 +199,7 @@ export default class height extends PureComponent {
                             </XAxis>
                             <YAxis>
                                 <Label
-                                    value={"Altura em relação ao nivel do mar"}
+                                    value={"Percentual"}
                                     position="left"
                                     angle={-90}
                                     style={{ textAnchor: "middle" }}
@@ -208,7 +207,7 @@ export default class height extends PureComponent {
                             </YAxis>
                             <Tooltip />
                             <Legend />
-                            <Line dataKey="height" name="Altura" unit={"metro(s)"} />
+                            <Line dataKey="height" name="Umidade do solo" unit={"%"} />
                         </LineChart>
                     </div>
                     <div>

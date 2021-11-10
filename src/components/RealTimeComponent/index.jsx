@@ -7,7 +7,6 @@ export default class RealTimeComponent extends React.Component {
 
   state = {
     realtime: [],
-
   }
 
   componentDidMount() {
@@ -61,18 +60,18 @@ export default class RealTimeComponent extends React.Component {
             </div>
             <div className="card_row">
               <div className="card_col">
-                Umidade do Solo
+                Atura
               </div>
               <div className="card_col">
-                {realtime.groundHumidity}
+                {realtime.groundHumidity} m
               </div>
             </div>
             <div className="card_row">
               <div className="card_col">
-                Altura
+                Umidade do solo
               </div>
               <div className="card_col">
-                {realtime.height} m
+                {realtime.height} %
               </div>
             </div>
             <div className="card_row">
@@ -105,3 +104,4 @@ export default class RealTimeComponent extends React.Component {
     }
 
   }
+  
